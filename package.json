@@ -1,0 +1,12 @@
+{
+    "name": "@unwb/svelte-workspace",
+    "version": "0.0.1",
+    "main": "main.js",
+    "workspaces": [
+        "sites/**",
+        "packages/*"
+    ],
+    "scripts": {
+        "test": "echo \" Error: no test specified \" && exit 1"
+    }
+}
