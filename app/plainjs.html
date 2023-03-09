@@ -1,0 +1,71 @@
+<html>
+
+<head>
+    <script defer src="../package/dist/bundle.js"></script>
+</head>
+
+<script>
+    var textComponent;
+
+    function load() {
+        var textClass = window.svelteComponents.Text
+
+        textComponent = new textClass({
+            target: document.getElementById("text-box"),
+            props: {
+                value: "Hello World",
+                metadata: {
+                    Required: true,
+                    Hidden: false,
+                    CustomProperties: {
+                        multiline: false,
+                    },
+                },
+                autocomplete: false,
+            }
+        })
+    }
+
+    function toggleTextBox() {
+        textComponent.toggle();
+    }
+
+    function getTextBoxValue() {
+        textComponent.getValue().then(res => alert("Textbox Value: " + res));
+    }
+
+    function clearTextBoxValue() {
+        textComponent.clearInput();
+    }
+</script>
+
+<body onload="load()">
+
+    <h1>Welcome to Plain JS Playground</h1>
+    <p>You may test your exported Svelte Component here</p>
+
+    <a href="./index.html">Click me to go to Angular js example</a>
+
+    <label>Example1: A component generated with client component api</label>
+    <div id="text-box"></div>
+    <button onclick="toggleTextBox()">Show/Hide Textbox</button>
+    <button onclick="getTextBoxValue()">Get Value</button>
+    <button onclick="clearTextBoxValue()">Clear Value</button>
+
+</body>
+
+</html>
+
+<style>
+    body {
+        padding: 5%;
+        display: flex;
+        flex-wrap: wrap;
+        flex-direction: column;
+    }
+
+    body>* {
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
+</style>

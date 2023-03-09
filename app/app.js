@@ -16,9 +16,32 @@ phonecatApp.controller('PhoneListController', function PhoneListController($scop
     }
   ];
 
-  $scope.showElement = false;
+  var textClass = window.svelteComponents.Text
 
-  $scope.handleClick = function () {
-    $scope.showElement = !$scope.showElement;
+  var textComponent = new textClass({
+    target: document.getElementById("text-box"),
+    props: {
+      value: "Hello World",
+      metadata: {
+        Required: true,
+        Hidden: false,
+        CustomProperties: {
+          multiline: false,
+        },
+      },
+      autocomplete: false,
+    }
+  });
+
+  $scope.toggleTextBox = function() {
+    textComponent.toggle();
+  }
+
+  $scope.getTextBoxValue = function() {
+    textComponent.getValue().then(res => alert("Textbox Value: " + res));
+  }
+
+  $scope.clearTextBoxValue = function() {
+    textComponent.clearInput();
   }
 });
