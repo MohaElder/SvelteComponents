@@ -14,7 +14,6 @@ export default defineConfig({
 		}),
 		!debug && svelte({
 			preprocess: vitePreprocess(),
-			include: /\.wc\.svelte$/
 		}),
 		resolve(),
 		!debug && babel({

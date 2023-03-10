@@ -1,7 +1,9 @@
-import Text from "./lib/Text.wc.svelte";
+import Text from "./lib/Text.svelte";
+import Navigator from "./lib/Navigator.svelte";
 
 var svelteComponents = {
-    Text
+    Text,
+    Navigator
 };
 
 window.svelteComponents = svelteComponents;
