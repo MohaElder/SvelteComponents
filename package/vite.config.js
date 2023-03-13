@@ -1,7 +1,6 @@
 import { defineConfig } from 'vite';
 import { sveltekit } from '@sveltejs/kit/vite';
 import svelte from 'rollup-plugin-svelte';
-import resolve from '@rollup/plugin-node-resolve';
 import { babel } from '@rollup/plugin-babel';
 import { vitePreprocess } from '@sveltejs/kit/vite';
 import path from 'path';
@@ -15,7 +14,6 @@ export default defineConfig({
 		!debug && svelte({
 			preprocess: vitePreprocess(),
 		}),
-		resolve(),
 		!debug && babel({
 			babelHelpers: 'runtime',
 			exclude: ['node_modules/@babel/**'],
