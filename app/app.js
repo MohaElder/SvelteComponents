@@ -17,18 +17,6 @@ phonecatApp.controller('PhoneListController', function PhoneListController($scop
   ];
 
   var textClass = window.svelteComponents.Text
-  var navigatorClass = window.svelteComponents.Navigator
-
-  var navigatorComponent = new navigatorClass({
-    target: document.getElementById('navigator'),
-			props: {
-				pages: ['Contracts', 'Client Nodes', 'Suppliers', 'Countries', 'Users']
-			}
-  });
-
-  $scope.clearNavigatorValue = function() {
-    navigatorComponent.clear();
-  }
 
   var textComponent = new textClass({
     target: document.getElementById("text-box"),

@@ -1,10 +1,8 @@
 <script lang="ts">
 	import { onMount } from 'svelte';
 	import Text from '../lib/Text.svelte';
-	import Nav from '../lib/Navigator.svelte';
 
 	let textComponent: Text | null = null;
-	let navComponent: Nav | null = null;
 
 	onMount(() => {
 		textComponent = new Text({
@@ -20,16 +18,7 @@
 				autocomplete: false
 			}
 		});
-
-		navComponent = new Nav({
-			target: document.getElementById('navigator'),
-			props: {
-				pages: ['Contracts', 'Client Nodes', 'Suppliers', 'Countries', 'Users']
-			}
-		});
 	});
-
-	let text;
 </script>
 
 <body class="container">
@@ -53,15 +42,6 @@
 		<button
 			on:click={() => {
 				textComponent?.clearInput();
-			}}>Clear Value</button
-		>
-	</div>
-	<div>
-		<label>Example2: A navigator that searches pages</label>
-		<div id="navigator" />
-		<button
-			on:click={() => {
-				navComponent?.clear();
 			}}>Clear Value</button
 		>
 	</div>
