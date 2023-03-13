@@ -6,6 +6,7 @@ import { vitePreprocess } from '@sveltejs/kit/vite';
 import path from 'path';
 
 const debug = process.env.NODE_ENV === 'development';
+
 export default defineConfig({
 	plugins: [
 		// Only enable sveltekit() in development mode
