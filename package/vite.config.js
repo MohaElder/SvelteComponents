@@ -17,10 +17,17 @@ export default defineConfig({
 		}),
 		!debug && babel({
 			babelHelpers: 'runtime',
-			exclude: ['node_modules/@babel/**'],
+			exclude: ['node_modules/@babel/**', "node_modules/core-js/**"],
 			presets: [
 				[
 					'@babel/preset-env',
+					{
+						targets: {
+							"ie": "9"
+						},
+						useBuiltIns: "usage",
+						corejs: 3
+					}
 				]
 			],
 			plugins: [
